@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "217415505559",
+    "firebase_url": "https://redshift-01.firebaseio.com",
+    "project_id": "redshift-01",
+    "storage_bucket": "redshift-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217415505559:android:f08e9396157f4416",
+        "android_client_info": {
+          "package_name": "com.example.redshift"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217415505559-hc05q2tk1k03u69ad3vum4npqcrqkict.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmxFTADHIppceojUlAd8HaDKVnWQX57XQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217415505559-hc05q2tk1k03u69ad3vum4npqcrqkict.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
