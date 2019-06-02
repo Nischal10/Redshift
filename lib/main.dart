@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:redshift/uiElemenets/nearbyCard.dart';
-import 'package:redshift/uiElemenets/categories.dart';
+import 'package:redshift/uiElemenets/pages/nearbyCard.dart';
+import 'package:redshift/uiElemenets/pages/categories.dart';
 
 void main() => runApp(MyApp());
 
