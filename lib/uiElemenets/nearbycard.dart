@@ -23,12 +23,12 @@ class _NearbyCardState extends State<NearbyCard> {
             Radius.circular(10),
           ),
           boxShadow: <BoxShadow>[
-                BoxShadow(
-                  color: Colors.blue,
-                  offset: Offset(1.0, 3.0),
-                  blurRadius: 5.0,
-                ),
-              ],
+            BoxShadow(
+              color: Colors.blue,
+              offset: Offset(1.0, 3.0),
+              blurRadius: 5.0,
+            ),
+          ],
         ),
         child: Padding(
           padding: EdgeInsets.all(12),
@@ -41,7 +41,7 @@ class _NearbyCardState extends State<NearbyCard> {
                   Icon(
                     FontAwesomeIcons.coins,
                     color: Colors.white,
-                    size: 16,
+                    size: 12,
                   ),
                   SizedBox(
                     width: 8,
@@ -63,7 +63,7 @@ class _NearbyCardState extends State<NearbyCard> {
                       Icon(
                         FontAwesomeIcons.locationArrow,
                         color: Colors.white,
-                        size: 24,
+                        size: 25,
                       ),
                       SizedBox(
                         height: 8,
@@ -74,7 +74,7 @@ class _NearbyCardState extends State<NearbyCard> {
                           color: Colors.white,
                           fontFamily: 'Quicksand',
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 25,
                         ),
                       ),
                     ],
@@ -86,8 +86,8 @@ class _NearbyCardState extends State<NearbyCard> {
                   Text('Patan Durbar Square',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w200,
                       )),
                 ],
               )

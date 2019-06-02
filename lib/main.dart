@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:redshift/uiElemenets/nearbycard.dart';
+import 'package:redshift/uiElemenets/nearbyCard.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +26,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       Text(
                         'NEARBY',
                         style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w700),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w900,
+                            color: Color(0xff4A7079)),
                       ),
                       SizedBox(height: 12),
                       NearbyCard(),
