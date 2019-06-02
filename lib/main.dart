@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redshift/uiElemenets/nearbyCard.dart';
+import 'package:redshift/uiElemenets/categories.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       SizedBox(height: 12),
                       NearbyCard(),
+                      Categories(),
                     ],
                   ),
                 ],
