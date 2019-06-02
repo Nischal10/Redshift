@@ -20,8 +20,15 @@ class _NearbyCardState extends State<NearbyCard> {
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(
-            Radius.circular(12),
+            Radius.circular(10),
           ),
+          boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.blue,
+                  offset: Offset(1.0, 3.0),
+                  blurRadius: 5.0,
+                ),
+              ],
         ),
         child: Padding(
           padding: EdgeInsets.all(12),
