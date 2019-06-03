@@ -24,9 +24,10 @@ class _NearbyCardState extends State<NearbyCard> {
           ),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Colors.blue,
-              offset: Offset(1.0, 3.0),
-              blurRadius: 5.0,
+              color: Colors.blue[100],
+              offset: Offset(0.0, 4.0),
+              blurRadius: 10.0,
+              spreadRadius: 4.0,
             ),
           ],
         ),
@@ -74,7 +75,7 @@ class _NearbyCardState extends State<NearbyCard> {
                           color: Colors.white,
                           fontFamily: 'Quicksand',
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 20,
                         ),
                       ),
                     ],
@@ -86,8 +87,8 @@ class _NearbyCardState extends State<NearbyCard> {
                   Text('Patan Durbar Square',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w200,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
                       )),
                 ],
               )

@@ -19,6 +19,7 @@ class _CategoriesState extends State<Categories> {
             color: Color(0xff4A7079),
             size: 30,
           ),
+          SizedBox(height: 4,),
           Text(
             'Temples',
             style: TextStyle(

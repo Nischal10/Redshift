@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:redshift/uiElemenets/pages/nearbyCard.dart';
-import 'package:redshift/uiElemenets/pages/categories.dart';
+import 'package:redshift/pages/alluiwidgets.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,36 +28,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Row(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(12),
-              child: Row(
-                children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(height: 40),
-                      Text(
-                        'NEARBY',
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w900,
-                            color: Color(0xff4A7079)),
-                      ),
-                      SizedBox(height: 12),
-                      NearbyCard(),
-                      Categories(),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return Allui();
   }
 }
