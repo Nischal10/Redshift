@@ -12,22 +12,34 @@ class _CategoriesState extends State<Categories> {
     return Material(
       child: Padding(
       padding: EdgeInsets.all(12),
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Icon(
             FontAwesomeIcons.pray,
             color: Color(0xff4A7079),
             size: 30,
           ),
-          SizedBox(height: 4,),
-          Text(
-            'Temples',
-            style: TextStyle(
-              color: Color(0xff4a7079),
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-            ),
-          )
+          Icon(
+            FontAwesomeIcons.mountain,
+            color: Color(0xff4A7079),
+            size: 30,
+          ),
+          Icon(
+            FontAwesomeIcons.building,
+            color: Color(0xff4A7079),
+            size: 30,
+          ),
+          Icon(
+            FontAwesomeIcons.utensils,
+            color: Color(0xff4A7079),
+            size: 30,
+          ),
+          Icon(
+            FontAwesomeIcons.glassCheers,
+            color: Color(0xff4A7079),
+            size: 30,
+          ),
         ],
       ),
     ));
