@@ -7,56 +7,120 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
+  Color get color => null;
+
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Padding(
-      padding: EdgeInsets.all(12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
+        child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
               FontAwesomeIcons.pray,
-              color: Color(0xff4A7079),
-              size: 30,
+              color: Color(0xff4a7079),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              child: Text(
+                'TEMPLES',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color(0xff4a7079),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
               FontAwesomeIcons.mountain,
-              color: Color(0xff4A7079),
-              size: 30,
+              color: Color(0xff4a7079),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              child: Text(
+                'NATURE',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color(0xff4a7079),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
               FontAwesomeIcons.building,
-              color: Color(0xff4A7079),
-              size: 30,
+              color: Color(0xff4a7079),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              child: Text(
+                'HOTELS',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color(0xff4a7079),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
               FontAwesomeIcons.utensils,
-              color: Color(0xff4A7079),
-              size: 30,
+              color: Color(0xff4a7079),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              child: Text(
+                'EATERIES',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color(0xff4a7079),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
               FontAwesomeIcons.glassCheers,
-              color: Color(0xff4A7079),
-              size: 30,
+              color: Color(0xff4a7079),
             ),
-          ),
-        ],
-      ),
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              child: Text(
+                'EVENTS',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Color(0xff4a7079),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     ));
   }
 }

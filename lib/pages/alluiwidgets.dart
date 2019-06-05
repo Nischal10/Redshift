@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:redshift/uiwidgets/nearbyCard.dart';
 import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/searchbox.dart';
-import 'package:redshift/uiwidgets/bottombar.dart';
 
 class Allui extends StatefulWidget {
   @override
@@ -42,6 +41,7 @@ class _AlluiState extends State<Allui> {
                               fontWeight: FontWeight.w900,
                               color: Color(0xff4A7079)),
                         ),
+                        SizedBox(height: 12),
                         Categories(),
                         SizedBox(height: 20),
                         Text(
