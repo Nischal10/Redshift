@@ -13,32 +13,47 @@ class _CategoriesState extends State<Categories> {
       child: Padding(
       padding: EdgeInsets.all(12),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          Icon(
-            FontAwesomeIcons.pray,
-            color: Color(0xff4A7079),
-            size: 30,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(
+              FontAwesomeIcons.pray,
+              color: Color(0xff4A7079),
+              size: 30,
+            ),
           ),
-          Icon(
-            FontAwesomeIcons.mountain,
-            color: Color(0xff4A7079),
-            size: 30,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(
+              FontAwesomeIcons.mountain,
+              color: Color(0xff4A7079),
+              size: 30,
+            ),
           ),
-          Icon(
-            FontAwesomeIcons.building,
-            color: Color(0xff4A7079),
-            size: 30,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(
+              FontAwesomeIcons.building,
+              color: Color(0xff4A7079),
+              size: 30,
+            ),
           ),
-          Icon(
-            FontAwesomeIcons.utensils,
-            color: Color(0xff4A7079),
-            size: 30,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(
+              FontAwesomeIcons.utensils,
+              color: Color(0xff4A7079),
+              size: 30,
+            ),
           ),
-          Icon(
-            FontAwesomeIcons.glassCheers,
-            color: Color(0xff4A7079),
-            size: 30,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(
+              FontAwesomeIcons.glassCheers,
+              color: Color(0xff4A7079),
+              size: 30,
+            ),
           ),
         ],
       ),
