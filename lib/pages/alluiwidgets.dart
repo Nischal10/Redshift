@@ -22,6 +22,7 @@ class _AlluiState extends State<Allui> {
                   children: <Widget>[
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
                         SizedBox(height: 40),
                         Text(

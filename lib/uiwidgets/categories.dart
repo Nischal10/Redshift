@@ -13,15 +13,15 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     return Material(
         child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               FontAwesomeIcons.pray,
               color: Color(0xff4a7079),
+              size: 30,
             ),
             Container(
               margin: const EdgeInsets.only(top: 8),
@@ -37,12 +37,11 @@ class _CategoriesState extends State<Categories> {
           ],
         ),
         Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               FontAwesomeIcons.mountain,
               color: Color(0xff4a7079),
+              size: 30,
             ),
             Container(
               margin: const EdgeInsets.only(top: 8),
@@ -58,12 +57,11 @@ class _CategoriesState extends State<Categories> {
           ],
         ),
         Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               FontAwesomeIcons.building,
               color: Color(0xff4a7079),
+              size: 30,
             ),
             Container(
               margin: const EdgeInsets.only(top: 8),
@@ -79,12 +77,11 @@ class _CategoriesState extends State<Categories> {
           ],
         ),
         Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               FontAwesomeIcons.utensils,
               color: Color(0xff4a7079),
+              size: 30,
             ),
             Container(
               margin: const EdgeInsets.only(top: 8),
@@ -100,12 +97,11 @@ class _CategoriesState extends State<Categories> {
           ],
         ),
         Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               FontAwesomeIcons.glassCheers,
               color: Color(0xff4a7079),
+              size: 30,
             ),
             Container(
               margin: const EdgeInsets.only(top: 8),
