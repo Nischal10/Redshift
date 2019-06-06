@@ -36,7 +36,7 @@ class _AlluiState extends State<Allui> {
                         NearbyCard(),
                         SizedBox(height: 20),
                         Text(
-                          'CATERGORIES',
+                          'CATEGORIES',
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w900,
@@ -54,7 +54,6 @@ class _AlluiState extends State<Allui> {
                         ),
                         SizedBox(height: 12),
                         SearchBox(),
-                        SizedBox(height: 20),
                       ],
                     ),
                   ],

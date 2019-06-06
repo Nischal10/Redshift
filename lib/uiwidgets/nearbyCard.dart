@@ -15,8 +15,8 @@ class _NearbyCardState extends State<NearbyCard> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        height: 180,
-        width: 160,
+        height: 183,
+        width: 183,
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(
@@ -27,7 +27,7 @@ class _NearbyCardState extends State<NearbyCard> {
               color: Colors.blue[100],
               offset: Offset(0.0, 4.0),
               blurRadius: 10.0,
-              spreadRadius: 4.0,
+              spreadRadius: 0.0,
             ),
           ],
         ),
