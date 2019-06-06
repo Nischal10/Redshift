@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:redshift/uiwidgets/nearbyCard.dart';
 import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/searchbox.dart';
+import 'package:redshift/uiwidgets/locationdetailcard.dart';
 
 class Allui extends StatefulWidget {
   @override
@@ -53,7 +54,7 @@ class _AlluiState extends State<Allui> {
                         ),
                         SizedBox(height: 12),
                         SearchBox(),
-                        
+                        SizedBox(height: 20),
                       ],
                     ),
                   ],
