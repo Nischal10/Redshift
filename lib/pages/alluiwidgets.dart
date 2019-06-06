@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:redshift/uiwidgets/nearbyCard.dart';
 import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/searchbox.dart';
+import 'package:redshift/uiwidgets/locationdetailcard.dart';
 
 class Allui extends StatefulWidget {
   @override
