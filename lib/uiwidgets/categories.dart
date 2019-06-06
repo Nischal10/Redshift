@@ -13,7 +13,7 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     return Material(
         child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         Column(
