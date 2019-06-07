@@ -3,6 +3,7 @@ import 'package:redshift/uiwidgets/nearbyCard.dart';
 import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/searchbox.dart';
 import 'package:redshift/uiwidgets/locationdetailcard.dart';
+import 'package:redshift/uiwidgets/recommendedcard.dart';
 
 class Allui extends StatefulWidget {
   @override
@@ -67,6 +68,8 @@ class _AlluiState extends State<Allui> {
                       color: Color(0xff4A7079)),
                 ),
                 Categories(),
+                SizedBox(height: 20),
+                Recommended(),
               ],
             ),
           ],
