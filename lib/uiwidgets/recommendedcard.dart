@@ -36,60 +36,70 @@ class _RecommendedState extends State<Recommended> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Icon(
-                    FontAwesomeIcons.coins,
+                    FontAwesomeIcons.pray,
                     color: Colors.white,
-                    size: 12,
+                    size: 20,
+                  ),
+                  Icon(
+                    FontAwesomeIcons.solidHeart,
+                    color: Colors.white,
+                    size: 25,
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Boudhanath Stupa',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Icon(
+                    FontAwesomeIcons.locationArrow,
+                    color: Colors.white,
+                    size: 15,
                   ),
                   SizedBox(
                     width: 8,
                   ),
                   Text(
-                    '200',
+                    '2 km',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Quicksand',
-                        fontWeight: FontWeight.bold),
+                      color: Colors.white,
+                      fontFamily: 'Quicksand',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
+                  ),
+                  Icon(
+                    FontAwesomeIcons.coins,
+                    color: Colors.white,
+                    size: 15,
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    '80',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Quicksand',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Icon(
-                        FontAwesomeIcons.locationArrow,
-                        color: Colors.white,
-                        size: 25,
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        '1.5 KM',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Quicksand',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Text('Patan Durbar Square',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                      )),
-                ],
-              )
             ],
           ),
         ),
