@@ -73,6 +73,7 @@ class _AlluiState extends State<Allui> {
                   LocationDetail(),
                   SizedBox(height: 20),
                   Recommended(),
+                  SizedBox(height: 50),
                 ],
               ),
             ],
