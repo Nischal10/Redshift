@@ -10,9 +10,9 @@ class _LocationDetailState extends State<LocationDetail> {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
-          height: 200,
-          color: Colors.red,
-          width: 200,
+          width: MediaQuery.of(context).size.width * 0.80,
+          color: Colors.blue,
+          height: 250,
         ),
     );
   }
