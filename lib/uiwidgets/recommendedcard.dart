@@ -44,58 +44,83 @@ class _RecommendedState extends State<Recommended> {
                     size: 20,
                   ),
                   Icon(
-                    FontAwesomeIcons.solidHeart,
+                    FontAwesomeIcons.heart,
                     color: Colors.white,
-                    size: 25,
+                    size: 20,
                   ),
                 ],
               ),
               Row(
                 children: <Widget>[
-                  Text(
-                    'Boudhanath Stupa',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    FontAwesomeIcons.locationArrow,
-                    color: Colors.white,
-                    size: 15,
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    '2 km',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Quicksand',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                  Icon(
-                    FontAwesomeIcons.coins,
-                    color: Colors.white,
-                    size: 15,
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    '80',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Quicksand',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              'Boudhanath Stupa',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Container(
+                              child: Row(
+                                children: <Widget>[
+                                  Icon(
+                                    FontAwesomeIcons.locationArrow,
+                                    color: Colors.white,
+                                    size: 15,
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    '2 km',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Quicksand',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Row(
+                                children: <Widget>[
+                                  Icon(
+                                    FontAwesomeIcons.coins,
+                                    color: Colors.white,
+                                    size: 15,
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    '80',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: 'Quicksand',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ],
