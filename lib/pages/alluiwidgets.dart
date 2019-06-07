@@ -13,63 +13,66 @@ class _AlluiState extends State<Allui> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Row(
-                    children: <Widget>[
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SizedBox(height: 40),
-                          Text(
-                            'NEARBY',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: Color(0xff4A7079)),
-                          ),
-                          SizedBox(height: 12),
-                          NearbyCard(),
-                          SizedBox(height: 20),
-                          Text(
-                            'SEARCH BOX',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w900,
-                                color: Color(0xff4A7079)),
-                          ),
-                          SizedBox(height: 12),
-                          SearchBox(),
-                        ],
-                      ),
-                    ],
+      body: SingleChildScrollView(
+              child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Row(
+                      children: <Widget>[
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            SizedBox(height: 40),
+                            Text(
+                              'NEARBY',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w900,
+                                  color: Color(0xff4A7079)),
+                            ),
+                            SizedBox(height: 12),
+                            NearbyCard(),
+                            SizedBox(height: 20),
+                            Text(
+                              'SEARCH BOX',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w900,
+                                  color: Color(0xff4A7079)),
+                            ),
+                            SizedBox(height: 12),
+                            SearchBox(),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  'CATEGORIES',
-                  style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w900,
-                      color: Color(0xff4A7079)),
-                ),
-                Categories(),
-              ],
-            ),
-          ],
+                ],
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'CATEGORIES',
+                    style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w900,
+                        color: Color(0xff4A7079)),
+                  ),
+                  Categories(),
+                  LocationDetail(),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
