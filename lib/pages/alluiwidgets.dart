@@ -88,7 +88,7 @@ class _AlluiState extends State<Allui> {
                       'STORE CATEGORIES',
                       style: TextStyle(
                         fontSize: 12,
-                        fontFamily: 'FontAwesome',
+                        fontFamily: 'Quicksand',
                         fontWeight: FontWeight.w900,
                         color: Color(0xff4A7079),
                       ),
