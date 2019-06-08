@@ -12,7 +12,7 @@ class _LocationDetailState extends State<LocationDetail> {
     return Center(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.80,
-        height: 212,
+        height: 250,
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(
@@ -51,21 +51,143 @@ class _LocationDetailState extends State<LocationDetail> {
                 ],
               ),
               SizedBox(
-                height: 12,
+                height: 30,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Column(
                     children: [
                       Icon(
                         FontAwesomeIcons.pray,
                         color: Colors.white,
-                        size: 30,
+                        size: 25,
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 8),
                         child: Text(
-                          '200+ Temples',
+                          '200+',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'temples',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.mountain,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 8),
+                        child: Text(
+                          '32+',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'nature',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.building,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 8),
+                        child: Text(
+                          '150+',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'hotels',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.utensils,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 8),
+                        child: Text(
+                          '3.2k+',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'eateries',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.glassCheers,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 8),
+                        child: Text(
+                          '5+',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'events',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.white,
