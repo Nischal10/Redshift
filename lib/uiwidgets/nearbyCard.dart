@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:redshift/designDocs/app_asset.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NearbyCard extends StatefulWidget {
   @override
@@ -13,10 +15,15 @@ class _NearbyCardState extends State<NearbyCard> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(
+        width: ScreenSize.screenWidth,
+        height: ScreenSize.screenHeight,
+        allowFontScaling: true)
+      ..init(context);
     return Material(
       child: Container(
-        height: 183,
-        width: 183,
+        height: ScreenUtil.instance.setHeight(240.0),
+        width: ScreenUtil.instance.setHeight(240.0),
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(
