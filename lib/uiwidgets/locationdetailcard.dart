@@ -12,7 +12,7 @@ class _LocationDetailState extends State<LocationDetail> {
     return Center(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.80,
-        height: 220,
+        height: 212,
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(
@@ -36,7 +36,9 @@ class _LocationDetailState extends State<LocationDetail> {
                 children: <Widget>[
                   Text(
                     'Stats',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                   Text(
                     'Review',
@@ -63,7 +65,7 @@ class _LocationDetailState extends State<LocationDetail> {
                       Container(
                         margin: const EdgeInsets.only(top: 8),
                         child: Text(
-                          'Temples',
+                          '200+ Temples',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.white,
@@ -95,7 +97,7 @@ class _LocationDetailState extends State<LocationDetail> {
                       Container(
                         width: 80,
                         decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: Colors.blue,
                           borderRadius: BorderRadius.all(
                             Radius.circular(4),
                           ),

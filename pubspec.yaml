@@ -30,6 +30,7 @@ dependencies:
   
   cupertino_icons: ^0.1.2
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -52,6 +53,11 @@ flutter:
         - asset: assets/fonts/Quicksand-Light.ttf
         - asset: assets/fonts/Quicksand-Medium.ttf
         - asset: assets/fonts/Quicksand-Regular.ttf
+    - family: FontAwesome
+      fonts:
+        - asset: assets/fonts/fa-light-300.ttf
+        - asset: assets/fonts/fa-regular-400.ttf
+        - asset: assets/fonts/fa-solid-900.ttf
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/images/
