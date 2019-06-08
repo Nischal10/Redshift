@@ -5,6 +5,7 @@ import 'package:redshift/uiwidgets/searchbox.dart';
 import 'package:redshift/uiwidgets/locationdetailcard.dart';
 import 'package:redshift/uiwidgets/recommendedcard.dart';
 import 'package:redshift/uiwidgets/locationoverview.dart';
+import 'package:redshift/uiwidgets/store_category.dart';
 
 class Allui extends StatefulWidget {
   @override
@@ -35,9 +36,10 @@ class _AlluiState extends State<Allui> {
                             Text(
                               'NEARBY',
                               style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0xff4A7079)),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w900,
+                                color: Color(0xff4A7079),
+                              ),
                             ),
                             SizedBox(height: 12),
                             NearbyCard(),
@@ -45,9 +47,10 @@ class _AlluiState extends State<Allui> {
                             Text(
                               'SEARCH BOX',
                               style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0xff4A7079)),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w900,
+                                color: Color(0xff4A7079),
+                              ),
                             ),
                             SizedBox(height: 12),
                             SearchBox(),
@@ -63,11 +66,12 @@ class _AlluiState extends State<Allui> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'CATEGORIES',
+                    'BY CATEGORY',
                     style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w900,
-                        color: Color(0xff4A7079)),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w900,
+                      color: Color(0xff4A7079),
+                    ),
                   ),
                   Categories(),
                   SizedBox(height: 20),
@@ -76,6 +80,18 @@ class _AlluiState extends State<Allui> {
                   Recommended(),
                   SizedBox(height: 20),
                   LOverview(),
+                  SizedBox(height: 20),
+                  Container(
+                    child: Text(
+                      'STORE CATEGORIES',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w900,
+                        color: Color(0xff4A7079),
+                      ),
+                    ),
+                  ),
+                  StoreCategories(),
                   SizedBox(height: 20),
                 ],
               ),

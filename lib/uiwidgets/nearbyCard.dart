@@ -100,7 +100,7 @@ class _NearbyCardState extends State<NearbyCard> {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
