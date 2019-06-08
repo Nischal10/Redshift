@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => Allui(),
-        '/splash': (context) => SplashScreen(),
+        '/splash': (context) => Allui(),
+        '/': (context) => SplashScreen(),
       },
     );
   }
