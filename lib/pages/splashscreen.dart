@@ -3,17 +3,16 @@ import 'package:redshift/designDocs/app_asset.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flare_flutter/flare_actor.dart';
 
-class SplashScreen extends StatefulWidget{
-
+class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>{
+class _SplashScreenState extends State<SplashScreen> {
   String _animationName = 'Untitled';
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(
         width: ScreenSize.screenWidth,
         height: ScreenSize.screenHeight,
@@ -31,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen>{
             colors: [
               Color(0xffff5e62),
               Color(0xffff9966),
-            ],  
+            ],
           ),
         ),
         child: FlareActor(
@@ -41,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen>{
           animation: _animationName,
           isPaused: false,
         ),
-        ),
+      ),
     );
   }
 }
