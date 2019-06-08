@@ -12,7 +12,7 @@ class _LocationDetailState extends State<LocationDetail> {
     return Center(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.80,
-        height: 250,
+        height: 220,
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(
@@ -78,37 +78,46 @@ class _LocationDetailState extends State<LocationDetail> {
                 height: 12,
               ),
               Container(
-                  height: 70,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(4),
-                    ),
+                height: 70,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(4),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Container(
-                          width: 80,
-                          decoration: BoxDecoration(
-                            color: Colors.red,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        width: 80,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(4),
                           ),
                         ),
-                        SizedBox(
-                          width: 12,
+                      ),
+                      SizedBox(
+                        width: 12,
+                      ),
+                      Text(
+                        'Patan Durbar Square',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
                         ),
-                        Text('Patan Durbar Square',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            )),
-                      ],
-                    ),
-                  ))
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
             ],
           ),
         ),
