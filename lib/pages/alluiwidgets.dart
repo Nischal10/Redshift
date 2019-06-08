@@ -4,6 +4,7 @@ import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/searchbox.dart';
 import 'package:redshift/uiwidgets/locationdetailcard.dart';
 import 'package:redshift/uiwidgets/recommendedcard.dart';
+import 'package:redshift/uiwidgets/locationoverview.dart';
 
 class Allui extends StatefulWidget {
   @override
@@ -73,7 +74,9 @@ class _AlluiState extends State<Allui> {
                   LocationDetail(),
                   SizedBox(height: 20),
                   Recommended(),
-                  SizedBox(height: 50),
+                  SizedBox(height: 20),
+                  LOverview(),
+                  SizedBox(height: 20),
                 ],
               ),
             ],
