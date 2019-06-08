@@ -21,6 +21,8 @@ dependencies:
     sdk: flutter
   firebase_core: ^0.2.5  
   firebase_analytics: ^1.0.4 
+
+  flutter_screenutil: ^0.5.2
   
   font_awesome_flutter: ^8.2.0
   
