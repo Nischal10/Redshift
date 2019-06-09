@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/uiwidgets/nearbyCard.dart';
 import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/searchbox.dart';
@@ -97,6 +98,78 @@ class _AlluiState extends State<Allui> {
                   SizedBox(height: 15),
                   StoreCategories(),
                   SizedBox(height: 20),
+                  Container(
+                    height: 60,
+                    width: MediaQuery.of(context).size.width * 1.0,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(0),
+                      ),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                          color: Colors.grey,
+                          offset: Offset(0.0, 4.0),
+                          blurRadius: 10.0,
+                          spreadRadius: 0.0,
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.home,
+                                color: Color(0xffC3C7C6),
+                                size: 20,
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.compass,
+                                color: Color(0xffC3C7C6),
+                                size: 20,
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.locationArrow,
+                                color: Color(0xffE36B77),
+                                size: 20,
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.store,
+                                color: Color(0xffC3C7C6),
+                                size: 20,
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(
+                                FontAwesomeIcons.user,
+                                color: Color(0xffC3C7C6),
+                                size: 20,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
