@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GameScaffold extends StatefulWidget {
-  final AppBar appBar;
   final Widget child;
-  const GameScaffold({Key key, @required this.appBar, @required this.child}) : super(key: key);
+  const GameScaffold({Key key, @required this.child}) : super(key: key);
   @override
   _GameScaffoldState createState() => _GameScaffoldState();
 }
@@ -13,7 +12,25 @@ class _GameScaffoldState extends State<GameScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: widget.appBar,
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(255, 255, 255,0),
+        elevation: 0,
+        leading: Container(
+          child: Row(
+            children: <Widget>[
+              Stack(children: <Widget>[
+                Icon(FontAwesomeIcons.home, color: Colors.red,),
+              ],)
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          Icon(FontAwesomeIcons.idBadge,color: Colors.red),
+          Text('12'),
+          SizedBox(width: 20,),
+          Icon(FontAwesomeIcons.coins,color: Colors.red),
+        ],
+      ),
       key: widget.key,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
