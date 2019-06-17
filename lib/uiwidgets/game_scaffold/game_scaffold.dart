@@ -13,22 +13,29 @@ class _GameScaffoldState extends State<GameScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(255, 255, 255,0),
+        backgroundColor: Color.fromRGBO(255, 255, 255, 0),
         elevation: 0,
         leading: Container(
           child: Row(
             children: <Widget>[
-              Stack(children: <Widget>[
-                Icon(FontAwesomeIcons.home, color: Colors.red,),
-              ],)
+              Stack(
+                children: <Widget>[
+                  Icon(
+                    FontAwesomeIcons.home,
+                    color: Colors.red,
+                  ),
+                ],
+              )
             ],
           ),
         ),
         actions: <Widget>[
-          Icon(FontAwesomeIcons.idBadge,color: Colors.red),
+          Icon(FontAwesomeIcons.award, color: Colors.red),
           Text('12'),
-          SizedBox(width: 20,),
-          Icon(FontAwesomeIcons.coins,color: Colors.red),
+          SizedBox(
+            width: 20,
+          ),
+          Icon(FontAwesomeIcons.coins, color: Colors.red),
         ],
       ),
       key: widget.key,
