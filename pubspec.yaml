@@ -50,15 +50,21 @@ flutter:
     - family: Quicksand
       fonts:
         - asset: assets/fonts/Quicksand-Bold.ttf
-          style: bold
+          weight: 700
         - asset: assets/fonts/Quicksand-Light.ttf
+          weight: 100
         - asset: assets/fonts/Quicksand-Medium.ttf
+          weight: 300
         - asset: assets/fonts/Quicksand-Regular.ttf
+          weight: 400
     - family: FontAwesome
       fonts:
         - asset: assets/fonts/fa-light-300.ttf
+          weight: 300
         - asset: assets/fonts/fa-regular-400.ttf
+          weight: 400
         - asset: assets/fonts/fa-solid-900.ttf
+          weight: 900
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/images/
