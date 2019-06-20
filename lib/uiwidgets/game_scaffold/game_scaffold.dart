@@ -71,7 +71,9 @@ class _GameScaffoldState extends State<GameScaffold> {
                   splashColor: Color(AppColors.primary),
                   child: Icon(
                     FontAwesomeIcons.home,
-                    color: Color(0xffC3C7C6),
+                    color: selectedPage == 0
+                        ? Color(AppColors.primary)
+                        : Color(0xffC3C7C6),
                     size: FontSize.fontSize20,
                   ),
                 ),
@@ -87,7 +89,9 @@ class _GameScaffoldState extends State<GameScaffold> {
                 splashColor: Color(AppColors.primary),
                 child: Icon(
                   FontAwesomeIcons.compass,
-                  color: Color(0xffC3C7C6),
+                  color: selectedPage == 1
+                      ? Color(AppColors.primary)
+                      : Color(0xffC3C7C6),
                   size: FontSize.fontSize24,
                 ),
               ),
@@ -103,7 +107,9 @@ class _GameScaffoldState extends State<GameScaffold> {
                 splashColor: Color(AppColors.primary),
                 child: Icon(
                   FontAwesomeIcons.store,
-                  color: Color(0xffC3C7C6),
+                  color: selectedPage == 2
+                      ? Color(AppColors.primary)
+                      : Color(0xffC3C7C6),
                   size: FontSize.fontSize20,
                 ),
               ),
@@ -122,7 +128,9 @@ class _GameScaffoldState extends State<GameScaffold> {
                   splashColor: Color(AppColors.primary),
                   child: Icon(
                     FontAwesomeIcons.user,
-                    color: Color(0xffC3C7C6),
+                    color: selectedPage == 3
+                        ? Color(AppColors.primary)
+                        : Color(0xffC3C7C6),
                     size: FontSize.fontSize20,
                   ),
                 ),
@@ -136,6 +144,11 @@ class _GameScaffoldState extends State<GameScaffold> {
         children: <Widget>[
           PageView(
             controller: pageController,
+            onPageChanged: (page) {
+              setState(() {
+                selectedPage = page;
+              });
+            },
             children: <Widget>[
               Container(
                 width: double.infinity,
