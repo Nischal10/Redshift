@@ -170,7 +170,7 @@ class _GameScaffoldState extends State<GameScaffold> {
                         color: Color(0xff4A7079),
                       ),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     NearbyCard(),
                     SizedBox(height: 40.0),
                     Text(
@@ -182,7 +182,7 @@ class _GameScaffoldState extends State<GameScaffold> {
                         color: Color(0xff4A7079),
                       ),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     Categories(),
                   ],
                 ),
@@ -202,7 +202,7 @@ class _GameScaffoldState extends State<GameScaffold> {
                         color: Color(0xff4A7079),
                       ),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 10.0),
                     Categories(),
                     SizedBox(height: 40.0),
                     Recommended(),
@@ -215,6 +215,16 @@ class _GameScaffoldState extends State<GameScaffold> {
                   children: <Widget>[
                     SearchBox(),
                     SizedBox(height: 40.0),
+                    Text(
+                      'SALE',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Quicksand',
+                        color: Color(0xff4A7079),
+                      ),
+                    ),
+                    SizedBox(height: 10.0),
                     Container(
                       height: 160.0,
                       width: MediaQuery.of(context).size.width * 0.80,
@@ -235,6 +245,48 @@ class _GameScaffoldState extends State<GameScaffold> {
                     ),
                     SizedBox(height: 40.0),
                     StoreCategories(),
+                    SizedBox(height: 40.0),
+                    Column(
+                      children: <Widget>[
+                        Container(
+                          height: 120.0,
+                          width: MediaQuery.of(context).size.width * 0.80,
+                          decoration: BoxDecoration(
+                            color: Color(0xff5873DE),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              height: 120.0,
+                              width: MediaQuery.of(context).size.width * 0.39,
+                              decoration: BoxDecoration(
+                                color: Color(0xffE36B77),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10.0),
+                            Container(
+                              height: 120.0,
+                              width: MediaQuery.of(context).size.width * 0.39,
+                              decoration: BoxDecoration(
+                                color: Color(0xff6CAC9C),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
