@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:redshift/pages/alluiwidgets.dart';
-import 'package:redshift/pages/splashscreen.dart';
 import 'package:redshift/uiwidgets/game_scaffold/game_scaffold.dart';
 
 void main() => runApp(MyApp());
@@ -20,7 +18,9 @@ class MyApp extends StatelessWidget {
       //   '/': (context) => Allui(),
       //   '/splash': (context) => SplashScreen(),
       // },
-      home: GameScaffold(),
+      home: GameScaffold(
+        child: Container(),
+      ),
     );
   }
 }
