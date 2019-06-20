@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:redshift/assets/design_colors.dart';
 
 class Recommended extends StatefulWidget {
   @override
@@ -16,15 +17,19 @@ class _RecommendedState extends State<Recommended> {
         height: 365,
         width: MediaQuery.of(context).size.width * 0.80,
         decoration: BoxDecoration(
-          color: Colors.redAccent,
+          color: Color(
+            AppColors.primary,
+          ),
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Colors.redAccent,
-              offset: Offset(0.0, 4.0),
-              blurRadius: 10.0,
+              color: Color(
+                AppColors.primary,
+              ),
+              offset: Offset(0.0, 3.0),
+              blurRadius: 5.0,
               spreadRadius: 0.0,
             ),
           ],
