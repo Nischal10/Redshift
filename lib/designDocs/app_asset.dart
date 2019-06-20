@@ -1,1 +1,0 @@
-export 'package:redshift/designDocs/design_screenSize.dart';

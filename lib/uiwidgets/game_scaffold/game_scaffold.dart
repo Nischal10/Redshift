@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:redshift/assets/assets.dart';
 
 class GameScaffold extends StatefulWidget {
   final Widget child;
@@ -31,7 +32,12 @@ class _GameScaffoldState extends State<GameScaffold> {
         ),
         actions: <Widget>[
           Icon(FontAwesomeIcons.award, color: Colors.red),
-          Text('12'),
+          Text(
+            '12',
+            style: TextStyle(
+              fontSize: FontSize.fontSize12,
+            ),
+          ),
           SizedBox(
             width: 20,
           ),

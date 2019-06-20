@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:redshift/designDocs/app_asset.dart';
+import 'package:redshift/assets/design_screenSize.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NearbyCard extends StatefulWidget {

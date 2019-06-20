@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:redshift/designDocs/app_asset.dart';
+import 'package:redshift/assets/design_screenSize.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flare_flutter/flare_actor.dart';
 
