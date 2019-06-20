@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/assets.dart';
-import 'package:redshift/uiwidgets/level_widget/level_widget.dart';
+import 'package:redshift/uiwidgets/game_app_bar/game_app_bar.dart';
 
 class GameScaffold extends StatefulWidget {
   final Widget child;
@@ -12,6 +12,21 @@ class GameScaffold extends StatefulWidget {
 }
 
 class _GameScaffoldState extends State<GameScaffold> {
+  final PageController pageController = PageController();
+
+  int selectedPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(
@@ -20,50 +35,6 @@ class _GameScaffoldState extends State<GameScaffold> {
     )..init(context);
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(255, 255, 255, 0),
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        centerTitle: false,
-        title: LevelWidget(
-          level: 4,
-          percent: 30,
-        ),
-        actions: <Widget>[
-          Icon(FontAwesomeIcons.award, color: Colors.red),
-          SizedBox(
-            width: ScreenUtil().setWidth(10),
-          ),
-          Center(
-            child: Text(
-              '12',
-              style: TextStyle(
-                fontSize: FontSize.fontSize12,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: ScreenUtil().setWidth(15),
-          ),
-          Icon(FontAwesomeIcons.coins, color: Colors.red),
-          SizedBox(
-            width: ScreenUtil().setWidth(10),
-          ),
-          Center(
-            child: Text(
-              '12',
-              style: TextStyle(
-                fontSize: FontSize.fontSize12,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: ScreenUtil().setWidth(20),
-          )
-        ],
-      ),
       key: widget.key,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
@@ -89,30 +60,71 @@ class _GameScaffoldState extends State<GameScaffold> {
                 padding: EdgeInsets.only(
                   left: ScreenUtil().setWidth(5),
                 ),
+                child: InkWell(
+                  onTap: () {
+                    _pageHandler(0);
+                  },
+                  radius: ScreenUtil().setWidth(200),
+                  borderRadius: BorderRadius.circular(
+                    ScreenUtil().setWidth(200),
+                  ),
+                  splashColor: Color(AppColors.primary),
+                  child: Icon(
+                    FontAwesomeIcons.home,
+                    color: Color(0xffC3C7C6),
+                    size: FontSize.fontSize20,
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  _pageHandler(1);
+                },
+                radius: ScreenUtil().setWidth(200),
+                borderRadius: BorderRadius.circular(
+                  ScreenUtil().setWidth(200),
+                ),
+                splashColor: Color(AppColors.primary),
                 child: Icon(
-                  FontAwesomeIcons.home,
+                  FontAwesomeIcons.compass,
+                  color: Color(0xffC3C7C6),
+                  size: FontSize.fontSize24,
+                ),
+              ),
+              SizedBox(width: ScreenUtil().setWidth(1)),
+              InkWell(
+                onTap: () {
+                  _pageHandler(2);
+                },
+                radius: ScreenUtil().setWidth(200),
+                borderRadius: BorderRadius.circular(
+                  ScreenUtil().setWidth(200),
+                ),
+                splashColor: Color(AppColors.primary),
+                child: Icon(
+                  FontAwesomeIcons.store,
                   color: Color(0xffC3C7C6),
                   size: FontSize.fontSize20,
                 ),
-              ),
-              Icon(
-                FontAwesomeIcons.compass,
-                color: Color(0xffC3C7C6),
-                size: FontSize.fontSize20,
-              ),
-              Icon(
-                FontAwesomeIcons.store,
-                color: Color(0xffC3C7C6),
-                size: FontSize.fontSize20,
               ),
               Padding(
                 padding: EdgeInsets.only(
                   right: ScreenUtil().setWidth(5),
                 ),
-                child: Icon(
-                  FontAwesomeIcons.user,
-                  color: Color(0xffC3C7C6),
-                  size: FontSize.fontSize20,
+                child: InkWell(
+                  onTap: () {
+                    _pageHandler(3);
+                  },
+                  radius: ScreenUtil().setWidth(200),
+                  borderRadius: BorderRadius.circular(
+                    ScreenUtil().setWidth(200),
+                  ),
+                  splashColor: Color(AppColors.primary),
+                  child: Icon(
+                    FontAwesomeIcons.user,
+                    color: Color(0xffC3C7C6),
+                    size: FontSize.fontSize20,
+                  ),
                 ),
               ),
             ],
@@ -120,7 +132,49 @@ class _GameScaffoldState extends State<GameScaffold> {
         ),
         color: Colors.white,
       ),
-      body: widget.child,
+      body: Stack(
+        children: <Widget>[
+          PageView(
+            controller: pageController,
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: Colors.blue,
+              ),
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: Colors.red,
+              ),
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: Colors.green,
+              ),
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                color: Colors.yellow,
+              ),
+            ],
+          ),
+          GameAppBar(
+            badge: 2,
+            coin: 200,
+            level: 5,
+            levelProgress: 50,
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _pageHandler(int pageNumber) {
+    pageController.animateToPage(
+      pageNumber,
+      curve: Curves.easeIn,
+      duration: Duration(milliseconds: 300),
     );
   }
 }
