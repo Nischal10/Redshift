@@ -40,7 +40,6 @@ class _GameScaffoldState extends State<GameScaffold> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffe36b77),
         onPressed: () {},
-        tooltip: 'Go to Map',
         child: Icon(
           FontAwesomeIcons.locationArrow,
           color: Colors.white,
