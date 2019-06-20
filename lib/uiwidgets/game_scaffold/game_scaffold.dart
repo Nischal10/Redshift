@@ -215,16 +215,25 @@ class _GameScaffoldState extends State<GameScaffold> {
                   children: <Widget>[
                     SearchBox(),
                     SizedBox(height: 40.0),
-                    Text(
-                      'BY CATEGORY',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
-                        color: Color(0xff4A7079),
+                    Container(
+                      height: 160.0,
+                      width: MediaQuery.of(context).size.width * 0.80,
+                      decoration: BoxDecoration(
+                        color: Color(0xffFA9384),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Color(0xfffa9384),
+                            offset: Offset(0.0, 3.0),
+                            blurRadius: 1.0,
+                            spreadRadius: 0.0,
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 40.0),
                     StoreCategories(),
                   ],
                 ),
