@@ -8,6 +8,7 @@ import 'package:redshift/pages/alluiwidgets.dart';
 import 'package:redshift/uiwidgets/nearbyCard.dart';
 import 'package:redshift/uiwidgets/recommendedcard.dart';
 import 'package:redshift/uiwidgets/searchbox.dart';
+import 'package:redshift/uiwidgets/store_category.dart';
 
 class GameScaffold extends StatefulWidget {
   final Widget child;
@@ -209,9 +210,24 @@ class _GameScaffoldState extends State<GameScaffold> {
                 ),
               ),
               Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: Colors.teal,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SearchBox(),
+                    SizedBox(height: 40.0),
+                    Text(
+                      'BY CATEGORY',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Quicksand',
+                        color: Color(0xff4A7079),
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    StoreCategories(),
+                  ],
+                ),
               ),
               Container(
                 width: double.infinity,
