@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/assets.dart';
+import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/game_app_bar/game_app_bar.dart';
+import 'package:redshift/pages/alluiwidgets.dart';
+import 'package:redshift/uiwidgets/nearbyCard.dart';
+import 'package:redshift/uiwidgets/searchbox.dart';
 
 class GameScaffold extends StatefulWidget {
   final Widget child;
@@ -150,24 +154,51 @@ class _GameScaffoldState extends State<GameScaffold> {
             },
             children: <Widget>[
               Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: Colors.blue,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SearchBox(),
+                    SizedBox(height: 40.0),
+                    Text(
+                      'NEARBY',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Quicksand',
+                        color: Color(0xff4A7079),
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    NearbyCard(),
+                    SizedBox(height: 40.0),
+                    Text(
+                      'CATEGORIES',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Quicksand',
+                        color: Color(0xff4A7079),
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    Categories(),
+                  ],
+                ),
               ),
               Container(
                 width: double.infinity,
                 height: double.infinity,
-                color: Colors.red,
+                color: Colors.red[200],
               ),
               Container(
                 width: double.infinity,
                 height: double.infinity,
-                color: Colors.green,
+                color: Colors.teal,
               ),
               Container(
                 width: double.infinity,
                 height: double.infinity,
-                color: Colors.yellow,
+                color: Colors.blue[300],
               ),
             ],
           ),

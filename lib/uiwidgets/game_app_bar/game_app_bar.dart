@@ -26,7 +26,7 @@ class GameAppBar extends StatelessWidget {
     )..init(context);
 
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.black12,
       elevation: 0,
       automaticallyImplyLeading: false,
       centerTitle: false,
