@@ -26,11 +26,11 @@ class LevelWidget extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(
-            top: ScreenUtil().setHeight(4),
+            top: ScreenUtil().setHeight(7),
             left: ScreenUtil().setWidth(20),
           ),
           width: ScreenUtil().setWidth(maxWidth),
-          height: ScreenUtil().setHeight(20),
+          height: ScreenUtil().setHeight(15),
           decoration: BoxDecoration(
             border: Border.all(
               color: Color(AppColors.primary),
@@ -53,11 +53,11 @@ class LevelWidget extends StatelessWidget {
           ),
           curve: Curves.easeIn,
           margin: EdgeInsets.only(
-            top: ScreenUtil().setHeight(4),
+            top: ScreenUtil().setHeight(7),
             left: ScreenUtil().setWidth(20),
           ),
           width: ScreenUtil().setWidth(percent),
-          height: ScreenUtil().setHeight(20),
+          height: ScreenUtil().setHeight(15),
           decoration: BoxDecoration(
             color: Color(AppColors.primary),
             border: Border.all(

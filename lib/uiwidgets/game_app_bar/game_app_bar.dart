@@ -37,33 +37,42 @@ class GameAppBar extends StatelessWidget {
       actions: <Widget>[
         Icon(
           FontAwesomeIcons.award,
-          color: Colors.red,
+          size: 15.0,
+          color: Color(
+            AppColors.primary,
+          ),
         ),
         SizedBox(
-          width: ScreenUtil().setWidth(10),
+          width: ScreenUtil().setWidth(5),
         ),
         Center(
           child: Text(
             '$badge',
             style: TextStyle(
               fontSize: FontSize.fontSize12,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
         ),
         SizedBox(
-          width: ScreenUtil().setWidth(15),
+          width: ScreenUtil().setWidth(25),
         ),
-        Icon(FontAwesomeIcons.coins, color: Colors.red),
+        Icon(
+          FontAwesomeIcons.coins,
+          size: 15.0,
+          color: Color(
+            AppColors.primary,
+          ),
+        ),
         SizedBox(
-          width: ScreenUtil().setWidth(10),
+          width: ScreenUtil().setWidth(5),
         ),
         Center(
           child: Text(
             '$coin',
             style: TextStyle(
               fontSize: FontSize.fontSize12,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
         ),
