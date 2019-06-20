@@ -172,11 +172,16 @@ class _GameScaffoldState extends State<GameScaffold> {
               ),
             ],
           ),
-          GameAppBar(
-            badge: 2,
-            coin: 200,
-            level: 5,
-            levelProgress: 50,
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: GameAppBar(
+              badge: 2,
+              coin: 200,
+              level: 5,
+              levelProgress: 50,
+            ),
           ),
         ],
       ),
