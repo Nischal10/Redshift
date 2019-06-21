@@ -52,11 +52,11 @@ class _HomePageState extends State<HomePage> {
                             width: ScreenUtil.instance.setWidth(10),
                           ),
                           Text(
-                            'Kathmandu, Nepal',
+                            'Kathmandu Valley, Nepal',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: FontSize.fontSize20,
-                                fontWeight: FontWeight.w600),
+                                fontWeight: FontWeight.w900),
                           ),
                         ],
                       ),
@@ -119,6 +119,9 @@ class _HomePageState extends State<HomePage> {
               height: ScreenUtil.instance.setHeight(12),
             ),
             Categories(),
+            SizedBox(
+              height: ScreenUtil.instance.setHeight(40),
+            ),
           ],
         ),
       ),

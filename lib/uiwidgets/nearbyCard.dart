@@ -33,7 +33,8 @@ class _NearbyCardState extends State<NearbyCard> {
               'assets/images/patan.jpg',
             ),
             fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Color(0XFFE36B77).withOpacity(0.7), BlendMode.srcATop),
+            colorFilter: ColorFilter.mode(
+                Color(0XFFE36B77).withOpacity(0.6), BlendMode.srcATop),
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(10),

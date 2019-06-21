@@ -14,7 +14,7 @@ class _LocationDetailState extends State<LocationDetail> {
     return Center(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.80,
-        height: ScreenUtil.instance.setHeight(310),
+        height: ScreenUtil.instance.setHeight(300),
         decoration: BoxDecoration(
           color: Color(0XFF5873DE),
           borderRadius: BorderRadius.all(
@@ -226,7 +226,8 @@ class _LocationDetailState extends State<LocationDetail> {
                         'Patan Durbar Square',
                         style: TextStyle(
                           fontSize: 12,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w900,
+                          color: Color(0xff4A7079),
                         ),
                       ),
                     ],

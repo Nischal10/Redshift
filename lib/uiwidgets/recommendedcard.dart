@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/design_colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Recommended extends StatefulWidget {
   @override
@@ -14,22 +15,25 @@ class _RecommendedState extends State<Recommended> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        height: 365,
-        width: MediaQuery.of(context).size.width * 0.80,
+        height: ScreenUtil.instance.setHeight(365.0),
+        width: ScreenUtil.instance.setHeight(340.0),
         decoration: BoxDecoration(
-          color: Color(
-            AppColors.primary,
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/boudha.png',
+            ),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+                Color(0XFFE36B77).withOpacity(0.6), BlendMode.srcATop),
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Color(
-                AppColors.primary,
-              ),
+              color: Color(0x60E36B77),
               offset: Offset(0.0, 3.0),
-              blurRadius: 5.0,
+              blurRadius: 3.0,
               spreadRadius: 0.0,
             ),
           ],
