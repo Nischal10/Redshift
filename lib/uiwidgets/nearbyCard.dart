@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/design_screenSize.dart';
@@ -22,8 +24,9 @@ class _NearbyCardState extends State<NearbyCard> {
       ..init(context);
     return Material(
       child: Container(
-        height: ScreenUtil.instance.setHeight(240.0),
-        width: ScreenUtil.instance.setHeight(240.0),
+        margin: const EdgeInsets.only(right: 10.0),
+        height: ScreenUtil.instance.setHeight(220.0),
+        width: ScreenUtil.instance.setHeight(220.0),
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(

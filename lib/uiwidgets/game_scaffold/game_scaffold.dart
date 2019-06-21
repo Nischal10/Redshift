@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/assets.dart';
+import 'package:redshift/pages/home.dart';
 import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/game_app_bar/game_app_bar.dart';
-import 'package:redshift/pages/alluiwidgets.dart';
-import 'package:redshift/uiwidgets/nearbyCard.dart';
 import 'package:redshift/uiwidgets/recommendedcard.dart';
 import 'package:redshift/uiwidgets/searchbox.dart';
 import 'package:redshift/uiwidgets/store_category.dart';
@@ -155,38 +154,7 @@ class _GameScaffoldState extends State<GameScaffold> {
               });
             },
             children: <Widget>[
-              Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    SearchBox(),
-                    SizedBox(height: 40.0),
-                    Text(
-                      'NEARBY',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
-                        color: Color(0xff4A7079),
-                      ),
-                    ),
-                    SizedBox(height: 10.0),
-                    NearbyCard(),
-                    SizedBox(height: 40.0),
-                    Text(
-                      'CATEGORIES',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
-                        color: Color(0xff4A7079),
-                      ),
-                    ),
-                    SizedBox(height: 10.0),
-                    Categories(),
-                  ],
-                ),
-              ),
+              HomePage(),
               Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

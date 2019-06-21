@@ -20,7 +20,7 @@ class _LocationDetailState extends State<LocationDetail> {
           ),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Colors.blue[100],
+              color: Colors.black.withOpacity(0.5),
               offset: Offset(0.0, 4.0),
               blurRadius: 10.0,
               spreadRadius: 0.0,
@@ -239,9 +239,7 @@ class _LocationDetailState extends State<LocationDetail> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 12,
-              ),
+              
             ],
           ),
         ),

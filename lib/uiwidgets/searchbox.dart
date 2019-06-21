@@ -11,7 +11,7 @@ class _SearchBoxState extends State<SearchBox> {
   Widget build(BuildContext context) {
     return Container(
       height: 35,
-      width: MediaQuery.of(context).size.width * 0.80,
+      width: MediaQuery.of(context).size.width * 0.90,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: new BorderRadius.circular(100.0),
