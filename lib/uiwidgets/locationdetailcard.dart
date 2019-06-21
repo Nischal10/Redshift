@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:redshift/assets/assets.dart';
 
 class LocationDetail extends StatefulWidget {
   @override
@@ -12,9 +14,9 @@ class _LocationDetailState extends State<LocationDetail> {
     return Center(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.80,
-        height: 250,
+        height: ScreenUtil.instance.setHeight(310),
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: Color(0XFF5873DE),
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
@@ -30,6 +32,7 @@ class _LocationDetailState extends State<LocationDetail> {
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -41,17 +44,10 @@ class _LocationDetailState extends State<LocationDetail> {
                     ),
                   ),
                   Text(
-                    'Review',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Text(
                     'About',
                     style: TextStyle(color: Colors.white),
                   ),
                 ],
-              ),
-              SizedBox(
-                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,14 +57,14 @@ class _LocationDetailState extends State<LocationDetail> {
                       Icon(
                         FontAwesomeIcons.pray,
                         color: Colors.white,
-                        size: 25,
+                        size: FontSize.fontSize20,
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 8),
                         child: Text(
                           '200+',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: FontSize.fontSize16,
                             color: Colors.white,
                           ),
                         ),
@@ -77,7 +73,7 @@ class _LocationDetailState extends State<LocationDetail> {
                         child: Text(
                           'temples',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: FontSize.fontSize12,
                             color: Colors.white,
                           ),
                         ),
@@ -89,14 +85,14 @@ class _LocationDetailState extends State<LocationDetail> {
                       Icon(
                         FontAwesomeIcons.mountain,
                         color: Colors.white,
-                        size: 25,
+                        size: FontSize.fontSize20,
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 8),
                         child: Text(
                           '32+',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: FontSize.fontSize16,
                             color: Colors.white,
                           ),
                         ),
@@ -105,7 +101,7 @@ class _LocationDetailState extends State<LocationDetail> {
                         child: Text(
                           'nature',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: FontSize.fontSize12,
                             color: Colors.white,
                           ),
                         ),
@@ -117,14 +113,14 @@ class _LocationDetailState extends State<LocationDetail> {
                       Icon(
                         FontAwesomeIcons.building,
                         color: Colors.white,
-                        size: 25,
+                        size: FontSize.fontSize20,
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 8),
                         child: Text(
                           '150+',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: FontSize.fontSize16,
                             color: Colors.white,
                           ),
                         ),
@@ -133,7 +129,7 @@ class _LocationDetailState extends State<LocationDetail> {
                         child: Text(
                           'hotels',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: FontSize.fontSize12,
                             color: Colors.white,
                           ),
                         ),
@@ -145,14 +141,14 @@ class _LocationDetailState extends State<LocationDetail> {
                       Icon(
                         FontAwesomeIcons.utensils,
                         color: Colors.white,
-                        size: 25,
+                        size: FontSize.fontSize20,
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 8),
                         child: Text(
                           '3.2k+',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: FontSize.fontSize16,
                             color: Colors.white,
                           ),
                         ),
@@ -161,7 +157,7 @@ class _LocationDetailState extends State<LocationDetail> {
                         child: Text(
                           'eateries',
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: FontSize.fontSize12,
                             color: Colors.white,
                           ),
                         ),
@@ -169,18 +165,19 @@ class _LocationDetailState extends State<LocationDetail> {
                     ],
                   ),
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
                         FontAwesomeIcons.glassCheers,
                         color: Colors.white,
-                        size: 25,
+                        size: FontSize.fontSize20,
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 8),
                         child: Text(
                           '5+',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: FontSize.fontSize16,
                             color: Colors.white,
                           ),
                         ),
@@ -198,11 +195,8 @@ class _LocationDetailState extends State<LocationDetail> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 12,
-              ),
               Container(
-                height: 70,
+                height: ScreenUtil.instance.setHeight(100),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(
@@ -216,13 +210,13 @@ class _LocationDetailState extends State<LocationDetail> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Container(
-                        width: 80,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(4),
-                          ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(6),
+                        child: Image.asset(
+                          'assets/images/patan.jpg',
+                          fit: BoxFit.cover,
+                          width: ScreenUtil.instance.setWidth(80),
+                          height: ScreenUtil.instance.setHeight(100),
                         ),
                       ),
                       SizedBox(
@@ -239,7 +233,6 @@ class _LocationDetailState extends State<LocationDetail> {
                   ),
                 ),
               ),
-              
             ],
           ),
         ),

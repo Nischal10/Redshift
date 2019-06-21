@@ -28,18 +28,16 @@ class _NearbyCardState extends State<NearbyCard> {
         height: ScreenUtil.instance.setHeight(220.0),
         width: ScreenUtil.instance.setHeight(220.0),
         decoration: BoxDecoration(
-          color: Colors.blue,
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/patan.jpg',
+            ),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Color(0XFFE36B77).withOpacity(0.7), BlendMode.srcATop),
+          ),
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: Colors.blue[100],
-              offset: Offset(0.0, 4.0),
-              blurRadius: 10.0,
-              spreadRadius: 0.0,
-            ),
-          ],
         ),
         child: Padding(
           padding: EdgeInsets.all(12),

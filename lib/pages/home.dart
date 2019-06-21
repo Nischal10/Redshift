@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
     return Material(
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               height: ScreenUtil.instance.setHeight(600.0),
@@ -28,14 +29,14 @@ class _HomePageState extends State<HomePage> {
                     child: Image.asset(
                       'assets/images/ktm.jpeg',
                       fit: BoxFit.cover,
-                      color: Colors.black.withOpacity(0.4),
-                      colorBlendMode: BlendMode.multiply,
+                      color: Color(0xff4A7079).withOpacity(0.8),
+                      colorBlendMode: BlendMode.srcATop,
                     ),
                   ),
                   Column(
                     children: <Widget>[
                       SizedBox(
-                        height: ScreenUtil.instance.setHeight(100),
+                        height: ScreenUtil.instance.setHeight(120),
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
@@ -74,20 +75,21 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 8),
               child: Text(
                 'NEARBY',
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                  fontSize: FontSize.fontSize12,
-                  fontWeight: FontWeight.w900,
+                  fontSize: FontSize.fontSize14,
+                  fontWeight: FontWeight.w600,
                   color: Color(0xff4A7079),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 0),
               child: Container(
+                color: Colors.white,
                 height: ScreenUtil.instance.setHeight(240.0),
                 child: ListView(
                   scrollDirection: Axis.horizontal,

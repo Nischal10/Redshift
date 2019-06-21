@@ -49,7 +49,8 @@ class GameAppBar extends StatelessWidget {
           child: Text(
             '$badge',
             style: TextStyle(
-              fontSize: FontSize.fontSize12,
+              fontSize: FontSize.fontSize14,
+              fontWeight: FontWeight.w500,
               color: Colors.white,
             ),
           ),
@@ -71,7 +72,8 @@ class GameAppBar extends StatelessWidget {
           child: Text(
             '$coin',
             style: TextStyle(
-              fontSize: FontSize.fontSize12,
+              fontSize: FontSize.fontSize14,
+              fontWeight: FontWeight.w500,
               color: Colors.white,
             ),
           ),
