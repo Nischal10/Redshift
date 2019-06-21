@@ -75,19 +75,22 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               child: Text(
                 'NEARBY',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontSize: FontSize.fontSize14,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w900,
                   color: Color(0xff4A7079),
                 ),
               ),
             ),
+            SizedBox(
+              height: ScreenUtil.instance.setHeight(12),
+            ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
               child: Container(
                 color: Colors.white,
                 height: ScreenUtil.instance.setHeight(240.0),
@@ -96,7 +99,26 @@ class _HomePageState extends State<HomePage> {
                   children: <Widget>[NearbyCard(), NearbyCard(), NearbyCard()],
                 ),
               ),
-            )
+            ),
+            SizedBox(
+              height: ScreenUtil.instance.setHeight(40),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              child: Text(
+                'CATEGORIES',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: FontSize.fontSize14,
+                  fontWeight: FontWeight.w900,
+                  color: Color(0xff4A7079),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: ScreenUtil.instance.setHeight(12),
+            ),
+            Categories(),
           ],
         ),
       ),
