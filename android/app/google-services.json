@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "217415505559-l8kn0qsfq2g24btqku3fl0flk9t6ugvv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.redshift",
+            "certificate_hash": "7baaa3b88f8eae3134d5b3407d5a665febbda62b"
+          }
+        },
+        {
           "client_id": "217415505559-hc05q2tk1k03u69ad3vum4npqcrqkict.apps.googleusercontent.com",
           "client_type": 3
         }

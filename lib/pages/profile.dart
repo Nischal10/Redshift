@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/assets.dart';
 
 class ProfilePage extends StatefulWidget {
+
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
@@ -28,7 +29,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     shape: BoxShape.circle,
                     image: new DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage("assets/images/akash.jpg"),
+                      image: NetworkImage(),
                     ),
                   ),
                 ),

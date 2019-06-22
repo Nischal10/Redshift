@@ -7,10 +7,13 @@ import 'package:redshift/pages/home.dart';
 import 'package:redshift/pages/profile.dart';
 import 'package:redshift/pages/store.dart';
 import 'package:redshift/uiwidgets/game_app_bar/game_app_bar.dart';
+import 'package:redshift/pages/splashscreen.dart';
 
 class GameScaffold extends StatefulWidget {
   final Widget child;
-  const GameScaffold({Key key, @required this.child}) : super(key: key);
+  final UserDetails detailsuser;
+
+  const GameScaffold({Key key, @required this.child, @required this.detailsuser}) : super(key: key);
   @override
   _GameScaffoldState createState() => _GameScaffoldState();
 }
