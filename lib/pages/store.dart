@@ -17,39 +17,44 @@ class _StorePageState extends State<StorePage> {
       child: SingleChildScrollView(
         child: Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(
                 height: ScreenUtil.instance.setHeight(100),
               ),
-              SearchBox(),
+              Center(child: SearchBox()),
               SizedBox(height: 40.0),
-              Text(
-                'SALE',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Quicksand',
-                  color: Color(0xff4A7079),
+              Padding(
+                padding: const EdgeInsets.only(left: 40.0),
+                child: Text(
+                  'SALE',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: FontSize.fontSize14,
+                    fontWeight: FontWeight.w900,
+                    color: Color(0xff4A7079),
+                  ),
                 ),
               ),
               SizedBox(height: 10.0),
-              Container(
-                height: 160.0,
-                width: MediaQuery.of(context).size.width * 0.80,
-                decoration: BoxDecoration(
-                  color: Color(0xffFA9384),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      color: Color(0xfffa9384),
-                      offset: Offset(0.0, 3.0),
-                      blurRadius: 1.0,
-                      spreadRadius: 0.0,
+              Center(
+                child: Container(
+                  height: 160.0,
+                  width: MediaQuery.of(context).size.width * 0.80,
+                  decoration: BoxDecoration(
+                    color: Color(AppColors.error),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
                     ),
-                  ],
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                        color: Color(AppColors.error),
+                        offset: Offset(0.0, 3.0),
+                        blurRadius: 1.0,
+                        spreadRadius: 0.0,
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 40.0),

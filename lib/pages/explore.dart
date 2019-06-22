@@ -49,8 +49,52 @@ class _ExplorePageState extends State<ExplorePage> {
               SizedBox(
                 height: ScreenUtil.instance.setHeight(40),
               ),
-              Center(
-                child: Recommended(),
+              Stack(
+                children: <Widget>[
+                  Center(
+                    child: Container(
+                      height: ScreenUtil.instance.setHeight(385.0),
+                      width: ScreenUtil.instance.setWidth(290.0),
+                      decoration: BoxDecoration(
+                        color: Color(AppColors.neutral),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Color(0x605873DE),
+                            offset: Offset(0.0, 3.0),
+                            blurRadius: 3.0,
+                            spreadRadius: 0.0,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      height: ScreenUtil.instance.setHeight(375.0),
+                      width: ScreenUtil.instance.setWidth(315.0),
+                      decoration: BoxDecoration(
+                        color: Color(AppColors.primary),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Color(0x60E36B77),
+                            offset: Offset(0.0, 3.0),
+                            blurRadius: 3.0,
+                            spreadRadius: 0.0,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Recommended(),
+                  ),
+                ],
               ),
             ],
           ),

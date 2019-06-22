@@ -16,7 +16,7 @@ class _RecommendedState extends State<Recommended> {
     return Material(
       child: Container(
         height: ScreenUtil.instance.setHeight(365.0),
-        width: ScreenUtil.instance.setHeight(340.0),
+        width: ScreenUtil.instance.setWidth(340.0),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(

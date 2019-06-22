@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/assets.dart';
 import 'package:redshift/pages/explore.dart';
 import 'package:redshift/pages/home.dart';
+import 'package:redshift/pages/profile.dart';
 import 'package:redshift/pages/store.dart';
 import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/game_app_bar/game_app_bar.dart';
@@ -159,11 +160,7 @@ class _GameScaffoldState extends State<GameScaffold> {
               HomePage(),
               ExplorePage(),
               StorePage(),
-              Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: Colors.blue[300],
-              ),
+              ProfilePage(),
             ],
           ),
           Positioned(
