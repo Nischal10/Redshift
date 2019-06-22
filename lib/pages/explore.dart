@@ -56,13 +56,13 @@ class _ExplorePageState extends State<ExplorePage> {
                       height: ScreenUtil.instance.setHeight(385.0),
                       width: ScreenUtil.instance.setWidth(290.0),
                       decoration: BoxDecoration(
-                        color: Color(AppColors.neutral),
+                        color: Color(AppColors.headers),
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                            color: Color(0x605873DE),
+                            color: Color(0x60384D78),
                             offset: Offset(0.0, 3.0),
                             blurRadius: 3.0,
                             spreadRadius: 0.0,
