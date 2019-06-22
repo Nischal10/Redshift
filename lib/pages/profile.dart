@@ -87,7 +87,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: ScreenUtil.instance.setHeight(190.0),
+                    height: ScreenUtil.instance.setHeight(220.0),
                     width: ScreenUtil.instance.setWidth(160.0),
                     decoration: BoxDecoration(
                       color: Color(AppColors.success),
@@ -95,18 +95,66 @@ class _ProfilePageState extends State<ProfilePage> {
                         Radius.circular(10),
                       ),
                     ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          FontAwesomeIcons.shoePrints,
+                          color: Color(0xff4E7E72),
+                          size: 40.0,
+                        ),
+                        SizedBox(height: 30.0),
+                        Text(
+                          '15kms',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 26.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        SizedBox(height: 10.0),
+                        Text(
+                          'distance travelled',
+                          style: TextStyle(color: Colors.white, fontSize: 15.0),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     width: 10.0,
                   ),
                   Container(
-                    height: ScreenUtil.instance.setHeight(190.0),
+                    height: ScreenUtil.instance.setHeight(220.0),
                     width: ScreenUtil.instance.setWidth(160.0),
                     decoration: BoxDecoration(
                       color: Color(AppColors.neutral),
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
                       ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          FontAwesomeIcons.mapMarker,
+                          color: Color(0xff384B97),
+                          size: 40.0,
+                        ),
+                        SizedBox(height: 30.0),
+                        Text(
+                          '90',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 26.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        SizedBox(height: 10.0),
+                        Text(
+                          'places discovered',
+                          style: TextStyle(color: Colors.white, fontSize: 15.0),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -116,7 +164,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: ScreenUtil.instance.setHeight(190.0),
+                    height: ScreenUtil.instance.setHeight(220.0),
                     width: ScreenUtil.instance.setWidth(160.0),
                     decoration: BoxDecoration(
                       color: Color(AppColors.error),
@@ -124,18 +172,66 @@ class _ProfilePageState extends State<ProfilePage> {
                         Radius.circular(10),
                       ),
                     ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          FontAwesomeIcons.coins,
+                          color: Color(0xffC57468),
+                          size: 40.0,
+                        ),
+                        SizedBox(height: 30.0),
+                        Text(
+                          '800',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 26.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        SizedBox(height: 10.0),
+                        Text(
+                          'points earned',
+                          style: TextStyle(color: Colors.white, fontSize: 15.0),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     width: 10.0,
                   ),
                   Container(
-                    height: ScreenUtil.instance.setHeight(190.0),
+                    height: ScreenUtil.instance.setHeight(220.0),
                     width: ScreenUtil.instance.setWidth(160.0),
                     decoration: BoxDecoration(
                       color: Color(AppColors.headers),
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
                       ),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          FontAwesomeIcons.commentAlt,
+                          color: Color(0xff222D46),
+                          size: 40.0,
+                        ),
+                        SizedBox(height: 30.0),
+                        Text(
+                          '5',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 26.0,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                        SizedBox(height: 10.0),
+                        Text(
+                          'reviews posted',
+                          style: TextStyle(color: Colors.white, fontSize: 15.0),
+                        ),
+                      ],
                     ),
                   ),
                 ],
