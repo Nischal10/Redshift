@@ -6,11 +6,7 @@ import 'package:redshift/pages/explore.dart';
 import 'package:redshift/pages/home.dart';
 import 'package:redshift/pages/profile.dart';
 import 'package:redshift/pages/store.dart';
-import 'package:redshift/uiwidgets/categories.dart';
 import 'package:redshift/uiwidgets/game_app_bar/game_app_bar.dart';
-import 'package:redshift/uiwidgets/recommendedcard.dart';
-import 'package:redshift/uiwidgets/searchbox.dart';
-import 'package:redshift/uiwidgets/store_category.dart';
 
 class GameScaffold extends StatefulWidget {
   final Widget child;
