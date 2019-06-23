@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+timport 'package:flutter/material.dart';
 import 'package:redshift/pages/splashscreen.dart';
 
 void main() => runApp(MyApp());
