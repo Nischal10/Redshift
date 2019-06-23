@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:redshift/assets/routes.dart';
 import 'package:redshift/dependencies.dart';
 import 'package:redshift/models/user.dart';
 import 'package:redshift/pages/splashscreen.dart';
 import 'package:kiwi/kiwi.dart' as kiwi;
 import 'package:provider/provider.dart';
+import 'package:redshift/uiwidgets/game_scaffold/game_scaffold.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -26,11 +28,10 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Quicksand',
         ),
         // initialRoute: '/',
-        // routes: {
-        //   '/': (context) => Allui(),
-        //   '/splash': (context) => SplashScreen(),
-        // },
-        home: SplashScreen(),
+        routes: {
+          AppRoutes.ROOT: (context) => SplashScreen(),
+          AppRoutes.GAME_HOME: (context) => GameScaffold(),
+        },
       ),
     );
   }

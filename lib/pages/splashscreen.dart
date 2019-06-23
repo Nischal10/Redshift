@@ -8,7 +8,6 @@ import 'package:redshift/assets/assets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:redshift/models/user.dart' as prefix0;
-import 'package:redshift/uiwidgets/game_scaffold/game_scaffold.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -23,6 +22,7 @@ class UserDetails {
 
 class _SplashScreenState extends State<SplashScreen> {
   String _animationName = 'Untitled';
+  bool loggedIn = true;
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -38,30 +38,23 @@ class _SplashScreenState extends State<SplashScreen> {
     );
 
     final FirebaseUser user = await _auth.signInWithCredential(credential);
-
-    UserDetails details = UserDetails(user.displayName, user.photoUrl);
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => GameScaffold(
-              child: Container(),
-              detailsuser: details,
-            ),
-      ),
-    );
-
     return user;
   }
 
   @override
   void initState() {
-    test();
+    checkSigninAndRedirect();
     super.initState();
   }
 
-  void test() async {
-    print(await _googleSignIn.isSignedIn());
+  void checkSigninAndRedirect() async {
+    loggedIn = await _googleSignIn.isSignedIn();
+    setState(() {});
+    if (loggedIn)
+      Navigator.of(context).pushNamedAndRemoveUntil(
+        AppRoutes.GAME_HOME,
+        (predicate) => false,
+      );
   }
 
   @override
@@ -101,7 +94,9 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Padding(
               padding: const EdgeInsets.all(24.0),
-              child: Container(
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.ease,
                 width:
                     ScreenUtil.getInstance().setWidth(ScreenSize.screenWidth),
                 height: ScreenUtil.getInstance().setHeight(400),
@@ -120,57 +115,63 @@ class _SplashScreenState extends State<SplashScreen> {
                     SizedBox(
                       height: 80,
                     ),
-                    Material(
-                      type: MaterialType.transparency,
-                      child: InkWell(
-                        splashColor: Colors.red,
-                        onTap: () => _signIn(context).then(
-                              (FirebaseUser user) {
-                                print('----------------------------------');
-                                print(user.displayName);
-                                print(user.photoUrl);
-                                print(user.email);
-                                Provider.of<prefix0.User>(context).create(
-                                  user.displayName,
-                                  user.email,
-                                  user.photoUrl,
-                                );
-                                print('----------------------------------');
-                              },
+                    if (!loggedIn) ...[
+                      Material(
+                        type: MaterialType.transparency,
+                        child: InkWell(
+                          splashColor: Colors.red,
+                          onTap: () => _signIn(context).then(
+                                (FirebaseUser user) {
+                                  print('----------------------------------');
+                                  print(user.displayName);
+                                  print(user.photoUrl);
+                                  print(user.email);
+                                  Provider.of<prefix0.User>(context).create(
+                                    user.displayName,
+                                    user.email,
+                                    user.photoUrl,
+                                  );
+                                  print('----------------------------------');
+                                  Navigator.of(context).pushNamedAndRemoveUntil(
+                                    AppRoutes.GAME_HOME,
+                                    (predicate) => false,
+                                  );
+                                },
+                              ),
+                          child: Container(
+                            height: 48,
+                            width: ScreenUtil.getInstance().setHeight(812),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(0, 0, 0, 0.2),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12),
+                              ),
                             ),
-                        child: Container(
-                          height: 48,
-                          width: ScreenUtil.getInstance().setHeight(812),
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(0, 0, 0, 0.2),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Row(
-                              children: <Widget>[
-                                Icon(
-                                  FontAwesomeIcons.google,
-                                  color: Colors.white,
-                                  size: 24,
-                                ),
-                                SizedBox(
-                                  width: 12,
-                                ),
-                                Text(
-                                  'Sign in with Google',
-                                  style: TextStyle(
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Row(
+                                children: <Widget>[
+                                  Icon(
+                                    FontAwesomeIcons.google,
                                     color: Colors.white,
+                                    size: 24,
                                   ),
-                                )
-                              ],
+                                  SizedBox(
+                                    width: 12,
+                                  ),
+                                  Text(
+                                    'Sign in with Google',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ],
                 ),
               ),
