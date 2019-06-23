@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:redshift/dependencies.dart';
+import 'package:redshift/models/user.dart';
 import 'package:redshift/pages/splashscreen.dart';
+import 'package:kiwi/kiwi.dart' as kiwi;
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  await initKiwi();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  final User redshitUser = User(kiwi.Container().resolve<SharedPreferences>());
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Redshift',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        fontFamily: 'Quicksand',
+    return Provider<User>.value(
+      value: redshitUser,
+      child: MaterialApp(
+        title: 'Redshift',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.light,
+          fontFamily: 'Quicksand',
+        ),
+        // initialRoute: '/',
+        // routes: {
+        //   '/': (context) => Allui(),
+        //   '/splash': (context) => SplashScreen(),
+        // },
+        home: SplashScreen(),
       ),
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => Allui(),
-      //   '/splash': (context) => SplashScreen(),
-      // },
-      home: SplashScreen(),
     );
   }
 }

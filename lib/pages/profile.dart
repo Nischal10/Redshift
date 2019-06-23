@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:redshift/assets/assets.dart';
+import 'package:redshift/models/user.dart';
 
 class ProfilePage extends StatefulWidget {
-
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
@@ -29,7 +30,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     shape: BoxShape.circle,
                     image: new DecorationImage(
                       fit: BoxFit.fill,
-                      image: NetworkImage(),
+                      image: NetworkImage(
+                        Provider.of<User>(context).avatar,
+                      ),
                     ),
                   ),
                 ),
@@ -39,7 +42,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               Center(
                 child: Text(
-                  'Aakash Raj Dahal',
+                  Provider.of<User>(context).name,
                   style: TextStyle(
                     fontSize: FontSize.fontSize26,
                     fontWeight: FontWeight.w400,
