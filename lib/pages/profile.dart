@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'package:redshift/assets/assets.dart';
+import 'package:redshift/models/user.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -28,6 +31,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     shape: BoxShape.circle,
                     image: new DecorationImage(
                       fit: BoxFit.fill,
+<<<<<<< HEAD
+=======
+                      image: NetworkImage(
+                        Provider.of<User>(context).avatar,
+                      ),
+>>>>>>> c6f4a38072e2fe9e3c5f373ab75647ce12125444
                     ),
                   ),
                 ),
@@ -35,15 +44,32 @@ class _ProfilePageState extends State<ProfilePage> {
               SizedBox(
                 height: ScreenUtil.instance.setHeight(12),
               ),
-              Center(
-                child: Text(
-                  'Aakash Raj Dahal',
-                  style: TextStyle(
-                    fontSize: FontSize.fontSize26,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xff4A7079),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    Provider.of<User>(context).name,
+                    style: TextStyle(
+                      fontSize: FontSize.fontSize26,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff4A7079),
+                    ),
                   ),
-                ),
+                  IconButton(
+                    onPressed: () async {
+                      GoogleSignIn _g = GoogleSignIn();
+                      await _g.signOut();
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        AppRoutes.ROOT,
+                        (predicate) => false,
+                      );
+                    },
+                    icon: Icon(
+                      FontAwesomeIcons.signOutAlt,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: ScreenUtil.instance.setHeight(20),
