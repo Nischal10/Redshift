@@ -1,9 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:redshift/assets/assets.dart';
+import 'package:redshift/models/user.dart';
 import 'package:redshift/pages/explore.dart';
 import 'package:redshift/pages/home.dart';
+import 'package:redshift/pages/maingame.dart';
 import 'package:redshift/pages/profile.dart';
 import 'package:redshift/pages/store.dart';
 import 'package:redshift/uiwidgets/game_app_bar/game_app_bar.dart';
@@ -162,11 +166,29 @@ class _GameScaffoldState extends State<GameScaffold> {
             top: 0,
             left: 0,
             right: 0,
-            child: GameAppBar(
-              badge: 2,
-              coin: 200,
-              level: 5,
-              levelProgress: 50,
+            child: StreamBuilder<QuerySnapshot>(
+              stream: Firestore.instance
+                  .collection('user-data')
+                  .where('uid', isEqualTo: Provider.of<User>(context).uid)
+                  .snapshots(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  Map<String, dynamic> userData =
+                      snapshot.data.documents.first.data;
+                  return GameAppBar(
+                    badge: userData['badges'],
+                    coin: userData['coins'],
+                    level: userData['level'],
+                    levelProgress: userData['points'].toDouble(),
+                  );
+                }
+                return GameAppBar(
+                  badge: 0,
+                  coin: 0,
+                  level: 1,
+                  levelProgress: 0,
+                );
+              },
             ),
           ),
         ],

@@ -1,19 +1,27 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/design_screenSize.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NearbyCard extends StatefulWidget {
+  final String coins;
+  final String distance;
+  final String location;
+  final String imageURL;
+
+  const NearbyCard({
+    Key key,
+    @required this.coins,
+    @required this.distance,
+    @required this.location,
+    @required this.imageURL,
+  }) : super(key: key);
+
   @override
   _NearbyCardState createState() => _NearbyCardState();
 }
 
 class _NearbyCardState extends State<NearbyCard> {
-  String coins = '20';
-  String distance = '1.5 KM';
-  String location = 'Patan Durbar Square';
-
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(
@@ -28,8 +36,8 @@ class _NearbyCardState extends State<NearbyCard> {
         width: ScreenUtil.instance.setHeight(220.0),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-              'assets/images/patan.jpg',
+            image: NetworkImage(
+              widget.imageURL,
             ),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
@@ -56,11 +64,12 @@ class _NearbyCardState extends State<NearbyCard> {
                     width: 8,
                   ),
                   Text(
-                    '$coins',
+                    '${widget.coins}',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Quicksand',
-                        fontWeight: FontWeight.bold),
+                      color: Colors.white,
+                      fontFamily: 'Quicksand',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -78,7 +87,7 @@ class _NearbyCardState extends State<NearbyCard> {
                         height: 8,
                       ),
                       Text(
-                        '1.5 KM',
+                        '${widget.distance}',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'Quicksand',
@@ -93,7 +102,7 @@ class _NearbyCardState extends State<NearbyCard> {
               Row(
                 children: <Widget>[
                   Text(
-                    'Patan Durbar Square',
+                    '${widget.location}',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,

@@ -8,6 +8,7 @@ import 'package:redshift/assets/assets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:redshift/models/user.dart' as prefix0;
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -126,10 +127,39 @@ class _SplashScreenState extends State<SplashScreen> {
                                   print(user.displayName);
                                   print(user.photoUrl);
                                   print(user.email);
+                                  print(user.uid);
+
+                                  Firestore.instance
+                                      .collection('user-data')
+                                      .where(
+                                        'uid',
+                                        isEqualTo: user.uid,
+                                      )
+                                      .snapshots()
+                                      .listen(
+                                    (data) {
+                                      int count = data.documents.length;
+                                      if (count == 0) {
+                                        Firestore.instance
+                                            .collection('user-data')
+                                            .document()
+                                            .setData(
+                                          {
+                                            'uid': user.uid,
+                                            'level': 1,
+                                            'badges': 0,
+                                            'points': 0,
+                                          },
+                                        );
+                                      }
+                                    },
+                                  );
+
                                   Provider.of<prefix0.User>(context).create(
                                     user.displayName,
                                     user.email,
                                     user.photoUrl,
+                                    user.uid,
                                   );
                                   print('----------------------------------');
                                   Navigator.of(context).pushNamedAndRemoveUntil(
