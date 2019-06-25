@@ -46,9 +46,7 @@ class _GameScaffoldState extends State<GameScaffold> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffe36b77),
-        onPressed: () {
-          
-        },
+        onPressed: () {},
         child: Icon(
           FontAwesomeIcons.locationArrow,
           color: Colors.white,
@@ -175,7 +173,6 @@ class _GameScaffoldState extends State<GameScaffold> {
                   .snapshots(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  print(snapshot.data.documents.first.data);
                   Map<String, dynamic> userData =
                       snapshot.data.documents.first.data;
                   return GameAppBar(

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -54,9 +55,10 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             'Kathmandu Valley, Nepal',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: FontSize.fontSize20,
-                                fontWeight: FontWeight.w900),
+                              color: Colors.white,
+                              fontSize: FontSize.fontSize20,
+                              fontWeight: FontWeight.w900,
+                            ),
                           ),
                         ],
                       ),
@@ -94,9 +96,30 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 color: Colors.white,
                 height: ScreenUtil.instance.setHeight(240.0),
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[NearbyCard(), NearbyCard(), NearbyCard()],
+                child: StreamBuilder<QuerySnapshot>(
+                  stream: Firestore.instance.collection('location').snapshots(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      // Map<String, dynamic> data = snapshot.data.data;
+                      // print(data);
+                      List<DocumentSnapshot> documentList =
+                          snapshot.data.documents;
+                      return ListView.builder(
+                        physics: BouncingScrollPhysics(),
+                        itemCount: documentList.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return NearbyCard(
+                            coins: documentList[index].data['point'],
+                            distance: '1000km',
+                            imageURL: documentList[index].data['imageurl'],
+                            location: documentList[index].data['name'],
+                          );
+                        },
+                      );
+                    }
+                    return Container();
+                  },
                 ),
               ),
             ),
