@@ -44,7 +44,7 @@ class _GameScaffoldState extends State<GameScaffold> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffe36b77),
         onPressed: () {
-          _pageHandler(2);
+          
         },
         child: Icon(
           FontAwesomeIcons.locationArrow,
@@ -103,7 +103,7 @@ class _GameScaffoldState extends State<GameScaffold> {
               SizedBox(width: ScreenUtil().setWidth(1)),
               InkWell(
                 onTap: () {
-                  _pageHandler(3);
+                  _pageHandler(2);
                 },
                 radius: ScreenUtil().setWidth(200),
                 borderRadius: BorderRadius.circular(
@@ -124,7 +124,7 @@ class _GameScaffoldState extends State<GameScaffold> {
                 ),
                 child: InkWell(
                   onTap: () {
-                    _pageHandler(4);
+                    _pageHandler(3);
                   },
                   radius: ScreenUtil().setWidth(200),
                   borderRadius: BorderRadius.circular(
@@ -157,7 +157,6 @@ class _GameScaffoldState extends State<GameScaffold> {
             children: <Widget>[
               HomePage(),
               ExplorePage(),
-              MapPage(),
               StorePage(),
               ProfilePage(),
             ],
