@@ -31,12 +31,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     shape: BoxShape.circle,
                     image: new DecorationImage(
                       fit: BoxFit.fill,
-<<<<<<< HEAD
-=======
                       image: NetworkImage(
                         Provider.of<User>(context).avatar,
                       ),
->>>>>>> c6f4a38072e2fe9e3c5f373ab75647ce12125444
                     ),
                   ),
                 ),
