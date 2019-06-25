@@ -24,7 +24,9 @@ class LevelWidget extends StatelessWidget {
 
     return Stack(
       children: <Widget>[
-        Container(
+        AnimatedContainer(
+          duration: Duration(milliseconds: 300),
+          curve: Curves.ease,
           margin: EdgeInsets.only(
             top: ScreenUtil().setHeight(7),
             left: ScreenUtil().setWidth(20),
