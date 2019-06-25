@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redshift/assets/assets.dart';
 import 'package:redshift/pages/explore.dart';
 import 'package:redshift/pages/home.dart';
+import 'package:redshift/pages/maingame.dart';
 import 'package:redshift/pages/profile.dart';
 import 'package:redshift/pages/store.dart';
 import 'package:redshift/uiwidgets/game_app_bar/game_app_bar.dart';
@@ -42,7 +43,9 @@ class _GameScaffoldState extends State<GameScaffold> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffe36b77),
-        onPressed: () {},
+        onPressed: () {
+          _pageHandler(2);
+        },
         child: Icon(
           FontAwesomeIcons.locationArrow,
           color: Colors.white,
@@ -100,7 +103,7 @@ class _GameScaffoldState extends State<GameScaffold> {
               SizedBox(width: ScreenUtil().setWidth(1)),
               InkWell(
                 onTap: () {
-                  _pageHandler(2);
+                  _pageHandler(3);
                 },
                 radius: ScreenUtil().setWidth(200),
                 borderRadius: BorderRadius.circular(
@@ -121,7 +124,7 @@ class _GameScaffoldState extends State<GameScaffold> {
                 ),
                 child: InkWell(
                   onTap: () {
-                    _pageHandler(3);
+                    _pageHandler(4);
                   },
                   radius: ScreenUtil().setWidth(200),
                   borderRadius: BorderRadius.circular(
@@ -154,6 +157,7 @@ class _GameScaffoldState extends State<GameScaffold> {
             children: <Widget>[
               HomePage(),
               ExplorePage(),
+              MapPage(),
               StorePage(),
               ProfilePage(),
             ],
