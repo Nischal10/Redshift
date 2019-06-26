@@ -64,7 +64,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     },
                     icon: Icon(
                       FontAwesomeIcons.signOutAlt,
-                      color: Colors.black,
+                      color: Color(AppColors.headers),
+                      size: 15.0,
                     ),
                   ),
                 ],
