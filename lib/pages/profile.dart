@@ -91,6 +91,15 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ],
                   ),
+                  child: Center(
+                    child: Text(
+                      'You are Level 1',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 40.0),
