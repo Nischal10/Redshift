@@ -12,48 +12,62 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   bool mapToggle = false;
-  var currentLocation;
 
   GoogleMapController mapController;
 
   void initState() {
     super.initState();
-    Geolocator().getCurrentPosition().then((currloc) {
-      setState(() {
-        currentLocation = currloc;
-        mapToggle = true;
-      });
-    });
   }
 
   void onMapCreated(controller) {
-    setState(() {
-      mapController = controller;
-    });
+    mapController = controller;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: mapToggle
-              ? GoogleMap(
-                  mapType: MapType.hybrid,
-                  onMapCreated: onMapCreated,
-                  initialCameraPosition: CameraPosition(
-                    target: LatLng(
-                        currentLocation.latitude, currentLocation.longitude),
-                        zoom: 10,
-                  ),
-                )
-              : Center(
-                  child: Text('loading please wait'),
-                ),
-        ),
-      ],
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: StreamBuilder<Position>(
+              stream: Geolocator().getPositionStream(),
+              builder: (context, snapshot) {
+                print(snapshot);
+                if (snapshot.hasData)
+                  return GoogleMap(
+                    mapType: MapType.hybrid,
+                    onMapCreated: onMapCreated,
+                    initialCameraPosition: CameraPosition(
+                      target: LatLng(
+                        snapshot.data.latitude,
+                        snapshot.data.longitude,
+                      ),
+                      zoom: 15,
+                    ),
+                    markers: {
+                      Marker(
+                        markerId: MarkerId('user'),
+                        position: LatLng(
+                          snapshot.data.latitude,
+                          snapshot.data.longitude,
+                        ),
+                      ),
+                    },
+                  );
+                else
+                  return Center(
+                    child: Text(
+                      'loading please wait',
+                    ),
+                  );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
