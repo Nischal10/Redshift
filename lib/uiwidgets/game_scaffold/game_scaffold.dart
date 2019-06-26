@@ -46,7 +46,12 @@ class _GameScaffoldState extends State<GameScaffold> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xffe36b77),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MapPage()),
+          );
+        },
         child: Icon(
           FontAwesomeIcons.locationArrow,
           color: Colors.white,
