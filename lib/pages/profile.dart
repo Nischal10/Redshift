@@ -5,6 +5,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:redshift/assets/assets.dart';
 import 'package:redshift/models/user.dart';
+import 'package:redshift/uiwidgets/attraction_page.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -259,6 +260,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
               SizedBox(height: 40.0),
+              AttractionPage(),
             ],
           ),
         ),
