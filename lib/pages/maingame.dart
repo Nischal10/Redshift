@@ -69,7 +69,7 @@ class _MapPageState extends State<MapPage> {
                 } else {
                   return Center(
                     child: Text(
-                      'loading please wait',
+                      'Getting Places',
                     ),
                   );
                 }
