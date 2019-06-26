@@ -16,10 +16,14 @@ class MapPage extends StatefulWidget {
 
 class _MapPageState extends State<MapPage> {
   bool mapToggle = false;
+  bool updated = false;
 
   GoogleMapController mapController;
+  Firestore fireStore = Firestore.instance;
+  List<Map<String, dynamic>> locations = List<Map<String, dynamic>>();
 
   void initState() {
+    initLocations();
     super.initState();
   }
 
@@ -39,8 +43,9 @@ class _MapPageState extends State<MapPage> {
             child: StreamBuilder<Position>(
               stream: Geolocator().getPositionStream(),
               builder: (context, snapshot) {
-                print(snapshot);
-                if (snapshot.hasData)
+                if (snapshot.hasData) {
+                  handleLocation(snapshot.data);
+
                   return GoogleMap(
                     mapType: MapType.hybrid,
                     onMapCreated: onMapCreated,
@@ -61,12 +66,13 @@ class _MapPageState extends State<MapPage> {
                       ),
                     },
                   );
-                else
+                } else {
                   return Center(
                     child: Text(
                       'loading please wait',
                     ),
                   );
+                }
               },
             ),
           ),
@@ -102,5 +108,54 @@ class _MapPageState extends State<MapPage> {
         ],
       ),
     );
+  }
+
+  void initLocations() async {
+    QuerySnapshot _locations =
+        await fireStore.collection('location').getDocuments();
+    _locations.documents.forEach((document) {
+      locations.add(document.data);
+    });
+  }
+
+  void handleLocation(Position position) async {
+    for (Map<String, dynamic> location in locations) {
+      print('My location: ${position.latitude} ${position.longitude}');
+      double distance = await Geolocator().distanceBetween(
+        position.latitude,
+        position.longitude,
+        location['location'].latitude,
+        location['location'].longitude,
+        // 27.6694375,
+        // 85.4108921,
+      );
+      if (distance < 20 && !updated) {
+        updated = true;
+        QuerySnapshot userData = await fireStore
+            .collection('user-data')
+            .where('uid', isEqualTo: Provider.of<User>(context).uid)
+            .getDocuments();
+        DocumentSnapshot document = userData.documents.first;
+        Map<String, dynamic> data = document.data;
+        data['points'] = data['points'] + double.parse(location['point']);
+        if (data['points'] >= 100) {
+          data['level'] = data['level'] + 1;
+          data['points'] = data['points'] % 100;
+        }
+
+        fireStore.runTransaction((Transaction tx) async {
+          if (document.exists) {
+            await tx.update(document.reference, data);
+          }
+        });
+
+        print('updated');
+
+        Future.delayed(Duration(seconds: 10)).then((onValue) {
+          updated = false;
+        });
+      }
+      print('Distance: $distance');
+    }
   }
 }
