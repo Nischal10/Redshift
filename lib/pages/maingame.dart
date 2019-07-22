@@ -17,6 +17,8 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   bool mapToggle = false;
   bool updated = false;
+  // BitmapDescriptor myIcon;
+  
 
   GoogleMapController mapController;
   Firestore fireStore = Firestore.instance;
@@ -25,6 +27,11 @@ class _MapPageState extends State<MapPage> {
   void initState() {
     initLocations();
     super.initState();
+    // BitmapDescriptor.fromAssetImage(
+    //     ImageConfiguration(size: Size(20, 20)), 'assets/images/walking_2.png')
+    //     .then((onValue) {
+    //   myIcon = onValue;
+    // });
   }
 
   void onMapCreated(controller) {
@@ -54,11 +61,12 @@ class _MapPageState extends State<MapPage> {
                         snapshot.data.latitude,
                         snapshot.data.longitude,
                       ),
-                      zoom: 15,
+                      zoom: 16,
                     ),
                     markers: {
                       Marker(
                         markerId: MarkerId('user'),
+                        // icon: myIcon,
                         position: LatLng(
                           snapshot.data.latitude,
                           snapshot.data.longitude,
@@ -129,7 +137,7 @@ class _MapPageState extends State<MapPage> {
         // 27.6694375,
         // 85.4108921,
       );
-      if (distance < 20 && !updated) {
+      if (distance < 5000 && !updated) {
         updated = true;
         QuerySnapshot userData = await fireStore
             .collection('user-data')

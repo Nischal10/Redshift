@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                         itemBuilder: (context, index) {
                           return NearbyCard(
                             coins: documentList[index].data['point'],
-                            distance: '1000km',
+                            distance: '12km',
                             imageURL: documentList[index].data['imageurl'],
                             location: documentList[index].data['name'],
                           );
@@ -142,6 +142,7 @@ class _HomePageState extends State<HomePage> {
               height: ScreenUtil.instance.setHeight(12),
             ),
             Categories(),
+            
             SizedBox(
               height: ScreenUtil.instance.setHeight(40),
             ),
